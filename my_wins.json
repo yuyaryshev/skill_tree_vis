@@ -1,0 +1,19 @@
+{
+    "x": 0,
+    "y": 0,
+    "height": 100,
+    "width": 500,
+    "wins": {
+		"webstorm":{"app":true, "cmd":"\"C:\\Program Files\\JetBrains\\WebStorm 2019.2\\bin\\webstorm64.exe\""},
+        "watch": { "no_run": false, "cmd":"cls & npm run watch"},
+        "ycplmon": { "no_run": true, "cmd": "cls & npm run ycplmon"},
+        "tsc": { "no_run": true, "cmd": "cls & npm run ycplmon && tsc --watch" },
+        "web_server_dev": {"no_run":false, "cmd":"cls & npm run web_server_dev"},
+        "node": { "no_run": true, "cmd": "node"},
+        "web_server": {"no_run":true, "cmd":"cls & npm run web_server"},    
+		},
+    "wins_DISABLED": {
+        "verdaccio": "cls & verdaccio",
+        "git_status": "git status"
+    }
+}

@@ -1,0 +1,17 @@
+cd C:\Users\U_M12YK\Documents\YYaryshev\js\issue_loader
+cls
+watch
+
+
+
+cd C:\Users\U_M12YK\Documents\YYaryshev\js\issue_loader
+cls
+drop_all
+
+
+
+cd C:\Users\U_M12YK\Documents\YYaryshev\js\issue_loader
+cls
+web
+
+
