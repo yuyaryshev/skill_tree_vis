@@ -29,11 +29,15 @@ dependencies:
   '@babel/template': registry.npmjs.org/@babel/template/7.8.6
   '@babel/traverse': registry.npmjs.org/@babel/traverse/7.9.6
   '@babel/types': registry.npmjs.org/@babel/types/7.9.6
+  '@emotion/core': registry.npmjs.org/@emotion/core/10.0.28_react@16.13.1
+  '@emotion/styled': registry.npmjs.org/@emotion/styled/10.0.27_c989b1aa057905c7a8b69bf973f55a19
   '@hot-loader/react-dom': registry.npmjs.org/@hot-loader/react-dom/16.13.0_react@16.13.1
   '@material-ui/core': registry.npmjs.org/@material-ui/core/4.9.13_9dba40666b890f9e96216465f7e3d094
   '@material-ui/icons': registry.npmjs.org/@material-ui/icons/4.9.1_754667cb2cccba04f999c10cda3d734e
   '@material-ui/styles': registry.npmjs.org/@material-ui/styles/4.9.13_9dba40666b890f9e96216465f7e3d094
   '@mojotech/json-type-validation': registry.npmjs.org/@mojotech/json-type-validation/3.1.0
+  '@projectstorm/react-canvas-core': registry.npmjs.org/@projectstorm/react-canvas-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf
+  '@projectstorm/react-diagrams': registry.npmjs.org/@projectstorm/react-diagrams/6.0.1-beta.7_137ffcd33741b72c0efbd628afdb5163
   '@types/babel__core': registry.npmjs.org/@types/babel__core/7.1.7
   '@types/babel__generator': registry.npmjs.org/@types/babel__generator/7.6.1
   '@types/babel__template': registry.npmjs.org/@types/babel__template/7.0.2
@@ -75,9 +79,12 @@ dependencies:
   clean-stack: registry.npmjs.org/clean-stack/2.2.0
   clean-webpack-plugin: registry.npmjs.org/clean-webpack-plugin/3.0.0_webpack@4.43.0
   clone-deep: registry.npmjs.org/clone-deep/4.0.1
+  closest: registry.npmjs.org/closest/0.0.1
   commander: registry.npmjs.org/commander/4.1.1
   cookie-parser: registry.npmjs.org/cookie-parser/1.4.5
   cross-env: registry.npmjs.org/cross-env/6.0.3
+  cytoscape: registry.npmjs.org/cytoscape/3.15.0
+  dagre: registry.npmjs.org/dagre/0.8.5
   debug: registry.npmjs.org/debug/4.1.1
   deepmerge: registry.npmjs.org/deepmerge/4.2.2
   dependency-cruiser: registry.npmjs.org/dependency-cruiser/5.5.0_typescript@3.8.3
@@ -94,6 +101,7 @@ dependencies:
   levelup: registry.npmjs.org/levelup/4.4.0
   lodash: registry.npmjs.org/lodash/4.17.15
   lodash.clonedeepwith: registry.npmjs.org/lodash.clonedeepwith/4.5.0
+  mathjs: registry.npmjs.org/mathjs/7.0.0
   minimist: registry.npmjs.org/minimist/1.2.5
   minipass: registry.npmjs.org/minipass/3.1.1
   minizlib: registry.npmjs.org/minizlib/2.1.0
@@ -112,10 +120,14 @@ dependencies:
   nyc: registry.npmjs.org/nyc/14.1.1
   oracledb: registry.npmjs.org/oracledb/4.2.0
   path: registry.npmjs.org/path/0.12.7
+  pathfinding: registry.npmjs.org/pathfinding/0.4.18
+  paths-js: registry.npmjs.org/paths-js/0.4.10
   prettier: registry.npmjs.org/prettier/1.19.1
   react: registry.npmjs.org/react/16.13.1
   react-ace-editor: registry.npmjs.org/react-ace-editor/0.0.3
+  react-cytoscapejs: registry.npmjs.org/react-cytoscapejs/1.2.1_react-dom@16.13.1+react@16.13.1
   react-dom: registry.npmjs.org/react-dom/16.13.1_react@16.13.1
+  react-graph-editor: registry.npmjs.org/react-graph-editor/0.3.0_react-dom@16.13.1+react@16.13.1
   react-hot-loader: registry.npmjs.org/react-hot-loader/4.12.21_9dba40666b890f9e96216465f7e3d094
   react-number-format: registry.npmjs.org/react-number-format/4.4.1_react-dom@16.13.1+react@16.13.1
   react-scripts: registry.npmjs.org/react-scripts/3.4.1_4c5e4e40f7a0949289cb4db80d164554
@@ -2899,6 +2911,50 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz'
     version: 10.1.0
+  registry.npmjs.org/@emotion/cache/10.0.29:
+    dependencies:
+      '@emotion/sheet': registry.npmjs.org/@emotion/sheet/0.9.4
+      '@emotion/stylis': registry.npmjs.org/@emotion/stylis/0.8.5
+      '@emotion/utils': registry.npmjs.org/@emotion/utils/0.11.3
+      '@emotion/weak-memoize': registry.npmjs.org/@emotion/weak-memoize/0.2.5
+    dev: false
+    name: '@emotion/cache'
+    resolution:
+      integrity: sha512-fU2VtSVlHiF27empSbxi1O2JFdNWZO+2NFHfwO0pxgTep6Xa3uGb+3pVKfLww2l/IBGLNEZl5Xf/++A4wAYDYQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/cache/-/cache-10.0.29.tgz'
+    version: 10.0.29
+  registry.npmjs.org/@emotion/core/10.0.28_react@16.13.1:
+    dependencies:
+      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.9.6
+      '@emotion/cache': registry.npmjs.org/@emotion/cache/10.0.29
+      '@emotion/css': registry.npmjs.org/@emotion/css/10.0.27
+      '@emotion/serialize': registry.npmjs.org/@emotion/serialize/0.11.16
+      '@emotion/sheet': registry.npmjs.org/@emotion/sheet/0.9.4
+      '@emotion/utils': registry.npmjs.org/@emotion/utils/0.11.3
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@emotion/core/10.0.28
+    name: '@emotion/core'
+    peerDependencies:
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-pH8UueKYO5jgg0Iq+AmCLxBsvuGtvlmiDCOuv8fGNYn3cowFpLN98L8zO56U0H1PjDIyAlXymgL3Wu7u7v6hbA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/core/-/core-10.0.28.tgz'
+    version: 10.0.28
+  registry.npmjs.org/@emotion/css/10.0.27:
+    dependencies:
+      '@emotion/serialize': registry.npmjs.org/@emotion/serialize/0.11.16
+      '@emotion/utils': registry.npmjs.org/@emotion/utils/0.11.3
+      babel-plugin-emotion: registry.npmjs.org/babel-plugin-emotion/10.0.33
+    dev: false
+    name: '@emotion/css'
+    resolution:
+      integrity: sha512-6wZjsvYeBhyZQYNrGoR5yPMYbMBNEnanDrqmsqS1mzDm1cOTu12shvl2j4QHNS36UaTE0USIJawCH9C8oW34Zw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/css/-/css-10.0.27.tgz'
+    version: 10.0.27
   registry.npmjs.org/@emotion/hash/0.8.0:
     dev: false
     name: '@emotion/hash'
@@ -2907,6 +2963,114 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz'
     version: 0.8.0
+  registry.npmjs.org/@emotion/is-prop-valid/0.8.8:
+    dependencies:
+      '@emotion/memoize': registry.npmjs.org/@emotion/memoize/0.7.4
+    dev: false
+    name: '@emotion/is-prop-valid'
+    resolution:
+      integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz'
+    version: 0.8.8
+  registry.npmjs.org/@emotion/memoize/0.7.4:
+    dev: false
+    name: '@emotion/memoize'
+    resolution:
+      integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz'
+    version: 0.7.4
+  registry.npmjs.org/@emotion/serialize/0.11.16:
+    dependencies:
+      '@emotion/hash': registry.npmjs.org/@emotion/hash/0.8.0
+      '@emotion/memoize': registry.npmjs.org/@emotion/memoize/0.7.4
+      '@emotion/unitless': registry.npmjs.org/@emotion/unitless/0.7.5
+      '@emotion/utils': registry.npmjs.org/@emotion/utils/0.11.3
+      csstype: registry.npmjs.org/csstype/2.6.10
+    dev: false
+    name: '@emotion/serialize'
+    resolution:
+      integrity: sha512-G3J4o8by0VRrO+PFeSc3js2myYNOXVJ3Ya+RGVxnshRYgsvErfAOglKAiy1Eo1vhzxqtUvjCyS5gtewzkmvSSg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/serialize/-/serialize-0.11.16.tgz'
+    version: 0.11.16
+  registry.npmjs.org/@emotion/sheet/0.9.4:
+    dev: false
+    name: '@emotion/sheet'
+    resolution:
+      integrity: sha512-zM9PFmgVSqBw4zL101Q0HrBVTGmpAxFZH/pYx/cjJT5advXguvcgjHFTCaIO3enL/xr89vK2bh0Mfyj9aa0ANA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/sheet/-/sheet-0.9.4.tgz'
+    version: 0.9.4
+  registry.npmjs.org/@emotion/styled-base/10.0.31_c989b1aa057905c7a8b69bf973f55a19:
+    dependencies:
+      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.9.6
+      '@emotion/core': registry.npmjs.org/@emotion/core/10.0.28_react@16.13.1
+      '@emotion/is-prop-valid': registry.npmjs.org/@emotion/is-prop-valid/0.8.8
+      '@emotion/serialize': registry.npmjs.org/@emotion/serialize/0.11.16
+      '@emotion/utils': registry.npmjs.org/@emotion/utils/0.11.3
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@emotion/styled-base/10.0.31
+    name: '@emotion/styled-base'
+    peerDependencies:
+      '@emotion/core': ^10.0.28
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-wTOE1NcXmqMWlyrtwdkqg87Mu6Rj1MaukEoEmEkHirO5IoHDJ8LgCQL4MjJODgxWxXibGR3opGp1p7YvkNEdXQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/styled-base/-/styled-base-10.0.31.tgz'
+    version: 10.0.31
+  registry.npmjs.org/@emotion/styled/10.0.27_c989b1aa057905c7a8b69bf973f55a19:
+    dependencies:
+      '@emotion/core': registry.npmjs.org/@emotion/core/10.0.28_react@16.13.1
+      '@emotion/styled-base': registry.npmjs.org/@emotion/styled-base/10.0.31_c989b1aa057905c7a8b69bf973f55a19
+      babel-plugin-emotion: registry.npmjs.org/babel-plugin-emotion/10.0.33
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@emotion/styled/10.0.27
+    name: '@emotion/styled'
+    peerDependencies:
+      '@emotion/core': ^10.0.27
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-iK/8Sh7+NLJzyp9a5+vIQIXTYxfT4yB/OJbjzQanB2RZpvmzBQOHZWhpAMZWYEKRNNbsD6WfBw5sVWkb6WzS/Q==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/styled/-/styled-10.0.27.tgz'
+    version: 10.0.27
+  registry.npmjs.org/@emotion/stylis/0.8.5:
+    dev: false
+    name: '@emotion/stylis'
+    resolution:
+      integrity: sha512-h6KtPihKFn3T9fuIrwvXXUOwlx3rfUvfZIcP5a6rh8Y7zjE3O06hT5Ss4S/YI1AYhuZ1kjaE/5EaOOI2NqSylQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/stylis/-/stylis-0.8.5.tgz'
+    version: 0.8.5
+  registry.npmjs.org/@emotion/unitless/0.7.5:
+    dev: false
+    name: '@emotion/unitless'
+    resolution:
+      integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz'
+    version: 0.7.5
+  registry.npmjs.org/@emotion/utils/0.11.3:
+    dev: false
+    name: '@emotion/utils'
+    resolution:
+      integrity: sha512-0o4l6pZC+hI88+bzuaX/6BgOvQVhbt2PfmxauVaYOGgbsAw14wdKyvMCZXnsnsHys94iadcF+RG/wZyx6+ZZBw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/utils/-/utils-0.11.3.tgz'
+    version: 0.11.3
+  registry.npmjs.org/@emotion/weak-memoize/0.2.5:
+    dev: false
+    name: '@emotion/weak-memoize'
+    resolution:
+      integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz'
+    version: 0.2.5
   registry.npmjs.org/@hapi/address/2.1.4:
     dev: false
     name: '@hapi/address'
@@ -3382,6 +3546,132 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz'
     version: 1.1.3
+  registry.npmjs.org/@projectstorm/geometry/6.1.1_mathjs@7.0.0:
+    dependencies:
+      mathjs: registry.npmjs.org/mathjs/7.0.0
+    dev: false
+    id: registry.npmjs.org/@projectstorm/geometry/6.1.1
+    name: '@projectstorm/geometry'
+    peerDependencies:
+      mathjs: ^6.0.3
+    resolution:
+      integrity: sha512-/cgFUerS2hFINrrNO5DCxcOu9dY8Dpy5JXdxpqobQ8qDNfX6MIbWIuwWngP5K41witVNzhZRzP+4ewk6SGyuHg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/geometry/-/geometry-6.1.1.tgz'
+    version: 6.1.1
+  registry.npmjs.org/@projectstorm/react-canvas-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf:
+    dependencies:
+      '@projectstorm/geometry': registry.npmjs.org/@projectstorm/geometry/6.1.1_mathjs@7.0.0
+      closest: registry.npmjs.org/closest/0.0.1
+      lodash: registry.npmjs.org/lodash/4.17.15
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@projectstorm/react-canvas-core/6.1.1
+    name: '@projectstorm/react-canvas-core'
+    peerDependencies:
+      closest: ^0.0.1
+      lodash: 4.*
+      mathjs: '*'
+      react: 16.*
+    resolution:
+      integrity: sha512-dlZ2cKtG/pYPbgowN7/E8iy/+uqx0xhqZv+ugo2yw2EZZTe32/6BK0+Bp+ARJ9V2Az5N4fSqndoSQcZQtDQcYA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/react-canvas-core/-/react-canvas-core-6.1.1.tgz'
+    version: 6.1.1
+  registry.npmjs.org/@projectstorm/react-diagrams-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf:
+    dependencies:
+      '@projectstorm/geometry': registry.npmjs.org/@projectstorm/geometry/6.1.1_mathjs@7.0.0
+      '@projectstorm/react-canvas-core': registry.npmjs.org/@projectstorm/react-canvas-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf
+      closest: registry.npmjs.org/closest/0.0.1
+      lodash: registry.npmjs.org/lodash/4.17.15
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@projectstorm/react-diagrams-core/6.1.1
+    name: '@projectstorm/react-diagrams-core'
+    peerDependencies:
+      closest: ^0.0.1
+      lodash: 4.*
+      mathjs: '*'
+      react: 16.*
+      resize-observer-polyfill: ^1.5.1
+    resolution:
+      integrity: sha512-06rtK5h67Qq007xjTNPxcBAlXZq6KBZyHiHO8Fn0zAf6etDvTvFtIiB5J3T8I0xskBHcfrrg/ZH4qpeqbgrf4A==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/react-diagrams-core/-/react-diagrams-core-6.1.1.tgz'
+    version: 6.1.1
+  registry.npmjs.org/@projectstorm/react-diagrams-defaults/6.1.1_81537d670530b9a9df8eb0a8d7f339d2:
+    dependencies:
+      '@emotion/core': registry.npmjs.org/@emotion/core/10.0.28_react@16.13.1
+      '@emotion/styled': registry.npmjs.org/@emotion/styled/10.0.27_c989b1aa057905c7a8b69bf973f55a19
+      '@projectstorm/react-diagrams-core': registry.npmjs.org/@projectstorm/react-diagrams-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf
+      lodash: registry.npmjs.org/lodash/4.17.15
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@projectstorm/react-diagrams-defaults/6.1.1
+    name: '@projectstorm/react-diagrams-defaults'
+    peerDependencies:
+      '@emotion/core': ^10.*
+      '@emotion/styled': ^10.*
+      closest: '*'
+      lodash: 4.*
+      mathjs: '*'
+      react: 16.*
+    resolution:
+      integrity: sha512-dZhOFU3NuRaaokX69YoM1KZ+mExKZC6Y3CPx7TsNNR/MPhL36MKJg9BjvszlEh0qPo6mqENm/3bmHyXq3PeTUg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/react-diagrams-defaults/-/react-diagrams-defaults-6.1.1.tgz'
+    version: 6.1.1
+  registry.npmjs.org/@projectstorm/react-diagrams-routing/6.1.1_137ffcd33741b72c0efbd628afdb5163:
+    dependencies:
+      '@projectstorm/geometry': registry.npmjs.org/@projectstorm/geometry/6.1.1_mathjs@7.0.0
+      '@projectstorm/react-diagrams-core': registry.npmjs.org/@projectstorm/react-diagrams-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf
+      '@projectstorm/react-diagrams-defaults': registry.npmjs.org/@projectstorm/react-diagrams-defaults/6.1.1_81537d670530b9a9df8eb0a8d7f339d2
+      dagre: registry.npmjs.org/dagre/0.8.5
+      lodash: registry.npmjs.org/lodash/4.17.15
+      pathfinding: registry.npmjs.org/pathfinding/0.4.18
+      paths-js: registry.npmjs.org/paths-js/0.4.10
+      react: registry.npmjs.org/react/16.13.1
+    dev: false
+    id: registry.npmjs.org/@projectstorm/react-diagrams-routing/6.1.1
+    name: '@projectstorm/react-diagrams-routing'
+    peerDependencies:
+      '@emotion/core': '*'
+      '@emotion/styled': '*'
+      closest: '*'
+      dagre: ^0.8.4
+      lodash: 4.*
+      mathjs: '*'
+      pathfinding: ^0.4.18
+      paths-js: ^0.4.9
+      react: 16.*
+    resolution:
+      integrity: sha512-pFuSZC/D3Hoql+7CFBzjAUNlyK+/minoJ63Bya04FBxRfjsMWoW/qtdQbgGI5giQ9hixPuqcROn9IKiltShpdg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/react-diagrams-routing/-/react-diagrams-routing-6.1.1.tgz'
+    version: 6.1.1
+  registry.npmjs.org/@projectstorm/react-diagrams/6.0.1-beta.7_137ffcd33741b72c0efbd628afdb5163:
+    dependencies:
+      '@projectstorm/react-diagrams-core': registry.npmjs.org/@projectstorm/react-diagrams-core/6.1.1_a6131e9d06df27d1c5537b462b3f37bf
+      '@projectstorm/react-diagrams-defaults': registry.npmjs.org/@projectstorm/react-diagrams-defaults/6.1.1_81537d670530b9a9df8eb0a8d7f339d2
+      '@projectstorm/react-diagrams-routing': registry.npmjs.org/@projectstorm/react-diagrams-routing/6.1.1_137ffcd33741b72c0efbd628afdb5163
+    dev: false
+    id: registry.npmjs.org/@projectstorm/react-diagrams/6.0.1-beta.7
+    name: '@projectstorm/react-diagrams'
+    peerDependencies:
+      '@emotion/core': '*'
+      '@emotion/styled': '*'
+      closest: '*'
+      dagre: '*'
+      lodash: '*'
+      mathjs: '*'
+      pathfinding: '*'
+      paths-js: '*'
+      react: '*'
+    resolution:
+      integrity: sha512-aEQuRyNtzrlc6TNVji5Zme9fJkOcnCdiskPFXF14c0b9MJO4cz8yUrGZh0/MjsSH8pQl1sB71mnGFLQ20aAHmQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@projectstorm/react-diagrams/-/react-diagrams-6.0.1-beta.7.tgz'
+    version: 6.0.1-beta.7
   registry.npmjs.org/@sinonjs/commons/1.7.2:
     dependencies:
       type-detect: registry.npmjs.org/type-detect/4.0.8
@@ -5622,6 +5912,25 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.3.tgz'
     version: 2.3.3
+  registry.npmjs.org/babel-plugin-emotion/10.0.33:
+    dependencies:
+      '@babel/helper-module-imports': registry.npmjs.org/@babel/helper-module-imports/7.8.3
+      '@emotion/hash': registry.npmjs.org/@emotion/hash/0.8.0
+      '@emotion/memoize': registry.npmjs.org/@emotion/memoize/0.7.4
+      '@emotion/serialize': registry.npmjs.org/@emotion/serialize/0.11.16
+      babel-plugin-macros: registry.npmjs.org/babel-plugin-macros/2.8.0
+      babel-plugin-syntax-jsx: registry.npmjs.org/babel-plugin-syntax-jsx/6.18.0
+      convert-source-map: registry.npmjs.org/convert-source-map/1.7.0
+      escape-string-regexp: registry.npmjs.org/escape-string-regexp/1.0.5
+      find-root: registry.npmjs.org/find-root/1.1.0
+      source-map: registry.npmjs.org/source-map/0.5.7
+    dev: false
+    name: babel-plugin-emotion
+    resolution:
+      integrity: sha512-bxZbTTGz0AJQDHm8k6Rf3RQJ8tX2scsfsRyKVgAbiUPUNIRtlK+7JxP+TAd1kRLABFxe0CFm2VdK4ePkoA9FxQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/babel-plugin-emotion/-/babel-plugin-emotion-10.0.33.tgz'
+    version: 10.0.33
   registry.npmjs.org/babel-plugin-istanbul/5.2.0:
     dependencies:
       '@babel/helper-plugin-utils': registry.npmjs.org/@babel/helper-plugin-utils/7.8.3
@@ -5651,7 +5960,7 @@ packages:
     version: 24.9.0
   registry.npmjs.org/babel-plugin-macros/2.8.0:
     dependencies:
-      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.9.0
+      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.9.6
       cosmiconfig: registry.npmjs.org/cosmiconfig/6.0.0
       resolve: registry.npmjs.org/resolve/1.17.0
     dev: false
@@ -5690,6 +5999,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.6.tgz'
     version: 0.3.6
+  registry.npmjs.org/babel-plugin-syntax-jsx/6.18.0:
+    dev: false
+    name: babel-plugin-syntax-jsx
+    resolution:
+      integrity: sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz'
+    version: 6.18.0
   registry.npmjs.org/babel-plugin-syntax-object-rest-spread/6.13.0:
     dev: false
     name: babel-plugin-syntax-object-rest-spread
@@ -6909,6 +7226,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/clone-deep/-/clone-deep-4.0.1.tgz'
     version: 4.0.1
+  registry.npmjs.org/closest/0.0.1:
+    dependencies:
+      matches-selector: registry.npmjs.org/matches-selector/0.0.1
+    dev: false
+    name: closest
+    resolution:
+      integrity: sha1-JtpvgLPg4X5x+A8SeCgZ6fZTSVw=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/closest/-/closest-0.0.1.tgz'
+    version: 0.0.1
   registry.npmjs.org/clsx/1.1.0:
     dev: false
     engines:
@@ -7151,6 +7478,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz'
     version: 1.0.1
+  registry.npmjs.org/complex.js/2.0.11:
+    dev: false
+    name: complex.js
+    resolution:
+      integrity: sha512-6IArJLApNtdg1P1dFtn3dnyzoZBEF0MwMnrfF1exSBRpZYoy4yieMkpZhQDC0uwctw48vii0CFVyHfpgZ/DfGw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/complex.js/-/complex.js-2.0.11.tgz'
+    version: 2.0.11
   registry.npmjs.org/component-emitter/1.3.0:
     dev: false
     name: component-emitter
@@ -7430,7 +7765,7 @@ packages:
       import-fresh: registry.npmjs.org/import-fresh/3.2.1
       parse-json: registry.npmjs.org/parse-json/5.0.0
       path-type: registry.npmjs.org/path-type/4.0.0
-      yaml: registry.npmjs.org/yaml/1.9.2
+      yaml: registry.npmjs.org/yaml/1.10.0
     dev: false
     engines:
       node: '>=8'
@@ -7994,6 +8329,19 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz'
     version: 1.0.1
+  registry.npmjs.org/cytoscape/3.15.0:
+    dependencies:
+      heap: registry.npmjs.org/heap/0.2.6
+      lodash.debounce: registry.npmjs.org/lodash.debounce/4.0.8
+    dev: false
+    engines:
+      node: '>=0.10'
+    name: cytoscape
+    resolution:
+      integrity: sha512-zpEcCYAVic5TKpZ9NpyNqK5Dfpv3/cSbVR/Ksb8geiRkL7oeG2iJzi/NMCKFgrFLlOyYtfaltKKqfVdVGHpcXg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/cytoscape/-/cytoscape-3.15.0.tgz'
+    version: 3.15.0
   registry.npmjs.org/d/1.0.1:
     dependencies:
       es5-ext: registry.npmjs.org/es5-ext/0.10.53
@@ -8005,6 +8353,17 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/d/-/d-1.0.1.tgz'
     version: 1.0.1
+  registry.npmjs.org/dagre/0.8.5:
+    dependencies:
+      graphlib: registry.npmjs.org/graphlib/2.1.8
+      lodash: registry.npmjs.org/lodash/4.17.15
+    dev: false
+    name: dagre
+    resolution:
+      integrity: sha512-/aTqmnRta7x7MCCpExk7HQL2O4owCT2h8NT//9I1OQ9vt29Pa0BzSAkR5lwFUcQ7491yVi/3CXU9jQ5o0Mn2Sw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/dagre/-/dagre-0.8.5.tgz'
+    version: 0.8.5
   registry.npmjs.org/damerau-levenshtein/1.0.6:
     dev: false
     name: damerau-levenshtein
@@ -8087,6 +8446,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz'
     version: 1.2.0
+  registry.npmjs.org/decimal.js/10.2.0:
+    dev: false
+    name: decimal.js
+    resolution:
+      integrity: sha512-vDPw+rDgn3bZe1+F/pyEwb1oMG2XTlRVgAa6B4KccTEpYgF8w6eQllVbQcfIJnZyvzFtFpxnpGtx8dd7DJp/Rw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/decimal.js/-/decimal.js-10.2.0.tgz'
+    version: 10.2.0
   registry.npmjs.org/decode-uri-component/0.2.0:
     dev: false
     engines:
@@ -8961,6 +9328,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz'
     version: 1.0.3
+  registry.npmjs.org/escape-latex/1.2.0:
+    dev: false
+    name: escape-latex
+    resolution:
+      integrity: sha512-nV5aVWW1K0wEiUIEdZ4erkGGH8mDxGyxSeqPzRNtWP7ataw+/olFObw7hujFWlVjNsaDFw5VZ5NzVSIqRgfTiw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/escape-latex/-/escape-latex-1.2.0.tgz'
+    version: 1.2.0
   registry.npmjs.org/escape-string-regexp/1.0.5:
     dev: false
     engines:
@@ -10024,6 +10399,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/find-cache-dir/-/find-cache-dir-3.3.1.tgz'
     version: 3.3.1
+  registry.npmjs.org/find-root/1.1.0:
+    dev: false
+    name: find-root
+    resolution:
+      integrity: sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/find-root/-/find-root-1.1.0.tgz'
+    version: 1.1.0
   registry.npmjs.org/find-up/1.1.2:
     dependencies:
       path-exists: registry.npmjs.org/path-exists/2.1.0
@@ -10285,6 +10668,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz'
     version: 0.1.2
+  registry.npmjs.org/fraction.js/4.0.12:
+    dev: false
+    name: fraction.js
+    resolution:
+      integrity: sha512-8Z1K0VTG4hzYY7kA/1sj4/r1/RWLBD3xwReT/RCrUCbzPszjNQCCsy3ktkU/eaEqX3MYa4pY37a52eiBlPMlhA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/fraction.js/-/fraction.js-4.0.12.tgz'
+    version: 4.0.12
   registry.npmjs.org/fragment-cache/0.2.1:
     dependencies:
       map-cache: registry.npmjs.org/map-cache/0.2.2
@@ -10515,6 +10906,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz'
     version: 2.0.0
+  registry.npmjs.org/get-node-dimensions/1.2.1:
+    dev: false
+    name: get-node-dimensions
+    resolution:
+      integrity: sha512-2MSPMu7S1iOTL+BOa6K1S62hB2zUAYNF/lV0gSVlOaacd087lc6nR1H1r0e3B1CerTo+RceOmi1iJW+vp21xcQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/get-node-dimensions/-/get-node-dimensions-1.2.1.tgz'
+    version: 1.2.1
   registry.npmjs.org/get-own-enumerable-property-symbols/3.0.2:
     dev: false
     name: get-own-enumerable-property-symbols
@@ -10810,6 +11209,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.4.tgz'
     version: 4.2.4
+  registry.npmjs.org/graphlib/2.1.8:
+    dependencies:
+      lodash: registry.npmjs.org/lodash/4.17.15
+    dev: false
+    name: graphlib
+    resolution:
+      integrity: sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/graphlib/-/graphlib-2.1.8.tgz'
+    version: 2.1.8
   registry.npmjs.org/growl/1.10.5:
     dev: false
     engines:
@@ -11048,6 +11457,22 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/he/-/he-1.2.0.tgz'
     version: 1.2.0
+  registry.npmjs.org/heap/0.2.5:
+    dev: false
+    name: heap
+    resolution:
+      integrity: sha1-cTtlWQ68xA/L7q9V6FFpQJKzmvE=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/heap/-/heap-0.2.5.tgz'
+    version: 0.2.5
+  registry.npmjs.org/heap/0.2.6:
+    dev: false
+    name: heap
+    resolution:
+      integrity: sha1-CH4fELBGky/IWU3Z5tN4r8nR5aw=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/heap/-/heap-0.2.6.tgz'
+    version: 0.2.6
   registry.npmjs.org/hex-color-regex/1.1.0:
     dev: false
     name: hex-color-regex
@@ -11482,6 +11907,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/immer/-/immer-1.10.0.tgz'
     version: 1.10.0
+  registry.npmjs.org/immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    name: immutable
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/immutable/-/immutable-3.8.2.tgz'
+    version: 3.8.2
   registry.npmjs.org/import-cwd/2.1.0:
     dependencies:
       import-from: registry.npmjs.org/import-from/2.1.0
@@ -12608,6 +13043,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/istanbul-reports/-/istanbul-reports-2.2.7.tgz'
     version: 2.2.7
+  registry.npmjs.org/javascript-natural-sort/0.7.1:
+    dev: false
+    name: javascript-natural-sort
+    resolution:
+      integrity: sha1-+eIwPUUH9tdDVac2ZNFED7Wg71k=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/javascript-natural-sort/-/javascript-natural-sort-0.7.1.tgz'
+    version: 0.7.1
   registry.npmjs.org/javascript-stringify/2.0.1:
     dev: false
     name: javascript-stringify
@@ -14359,6 +14802,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/map-visit/-/map-visit-1.0.0.tgz'
     version: 1.0.0
+  registry.npmjs.org/matches-selector/0.0.1:
+    dev: false
+    name: matches-selector
+    resolution:
+      integrity: sha1-HfUmIkOuNBwaCATdMCBIJnrHE7s=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/matches-selector/-/matches-selector-0.0.1.tgz'
+    version: 0.0.1
   registry.npmjs.org/math-random/1.0.4:
     dev: false
     name: math-random
@@ -14367,6 +14818,26 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/math-random/-/math-random-1.0.4.tgz'
     version: 1.0.4
+  registry.npmjs.org/mathjs/7.0.0:
+    dependencies:
+      complex.js: registry.npmjs.org/complex.js/2.0.11
+      decimal.js: registry.npmjs.org/decimal.js/10.2.0
+      escape-latex: registry.npmjs.org/escape-latex/1.2.0
+      fraction.js: registry.npmjs.org/fraction.js/4.0.12
+      javascript-natural-sort: registry.npmjs.org/javascript-natural-sort/0.7.1
+      seed-random: registry.npmjs.org/seed-random/2.2.0
+      tiny-emitter: registry.npmjs.org/tiny-emitter/2.1.0
+      typed-function: registry.npmjs.org/typed-function/1.1.1
+    dev: false
+    engines:
+      node: '>= 10'
+    hasBin: true
+    name: mathjs
+    resolution:
+      integrity: sha512-pe2hgDAHSfPRtuwIjNbL6fCKiHZYKKv45PusNfK3JDeVpVmHG1Pdig2vq62svsj2iKZO37tvLAjPUnrz6w+X9w==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/mathjs/-/mathjs-7.0.0.tgz'
+    version: 7.0.0
   registry.npmjs.org/md5.js/1.3.5:
     dependencies:
       hash-base: registry.npmjs.org/hash-base/3.1.0
@@ -16463,6 +16934,26 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/path/-/path-0.12.7.tgz'
     version: 0.12.7
+  registry.npmjs.org/pathfinding/0.4.18:
+    dependencies:
+      heap: registry.npmjs.org/heap/0.2.5
+    dev: false
+    name: pathfinding
+    resolution:
+      integrity: sha1-qZkPb6IrfvGW5WUbBJFlQDoEX+g=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/pathfinding/-/pathfinding-0.4.18.tgz'
+    version: 0.4.18
+  registry.npmjs.org/paths-js/0.4.10:
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    name: paths-js
+    resolution:
+      integrity: sha512-JZoqlRSHtx+bc+xKI9o4bropEbqZBF4ZfYImiB1T9RYpHB73h5I8XZ7FfSBbHbBMtdD1c04ujjAPH8wUuu4+Gw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/paths-js/-/paths-js-0.4.10.tgz'
+    version: 0.4.10
   registry.npmjs.org/pathval/1.1.0:
     dev: false
     name: pathval
@@ -18208,6 +18699,25 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/react-css-themr/-/react-css-themr-2.1.2.tgz'
     version: 2.1.2
+  registry.npmjs.org/react-cytoscapejs/1.2.1_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      cytoscape: registry.npmjs.org/cytoscape/3.15.0
+      prop-types: registry.npmjs.org/prop-types/15.7.2
+      react: registry.npmjs.org/react/16.13.1
+      react-dom: registry.npmjs.org/react-dom/16.13.1_react@16.13.1
+    dev: false
+    engines:
+      node: '>=8.11.3'
+    id: registry.npmjs.org/react-cytoscapejs/1.2.1
+    name: react-cytoscapejs
+    peerDependencies:
+      react: '>=15.0.0'
+      react-dom: '>=15.0.0'
+    resolution:
+      integrity: sha512-8exVCetpzyGCAKuRjXPWGjFCnb22boZ3SXUPpPB/+wQI8Q8BwkT1URN3A7J1Czvj1qAbShh5QQ514mBUp7i7kw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/react-cytoscapejs/-/react-cytoscapejs-1.2.1.tgz'
+    version: 1.2.1
   registry.npmjs.org/react-dev-utils/10.2.1:
     dependencies:
       '@babel/code-frame': registry.npmjs.org/@babel/code-frame/7.8.3
@@ -18268,6 +18778,23 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.7.tgz'
     version: 6.0.7
+  registry.npmjs.org/react-graph-editor/0.3.0_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      immutable: registry.npmjs.org/immutable/3.8.2
+      react: registry.npmjs.org/react/16.13.1
+      react-dom: registry.npmjs.org/react-dom/16.13.1_react@16.13.1
+      react-measure: registry.npmjs.org/react-measure/1.4.7_react-dom@16.13.1+react@16.13.1
+    dev: false
+    id: registry.npmjs.org/react-graph-editor/0.3.0
+    name: react-graph-editor
+    peerDependencies:
+      react: ^15.4.0
+      react-dom: ^15.4.0
+    resolution:
+      integrity: sha1-/+kNuS7NtKTaUlsHy3d5ZJ2IBHY=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/react-graph-editor/-/react-graph-editor-0.3.0.tgz'
+    version: 0.3.0
   registry.npmjs.org/react-hot-loader/4.12.21_9dba40666b890f9e96216465f7e3d094:
     dependencies:
       '@types/react': registry.npmjs.org/@types/react/16.9.34
@@ -18314,6 +18841,24 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz'
     version: 3.0.4
+  registry.npmjs.org/react-measure/1.4.7_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      get-node-dimensions: registry.npmjs.org/get-node-dimensions/1.2.1
+      prop-types: registry.npmjs.org/prop-types/15.7.2
+      react: registry.npmjs.org/react/16.13.1
+      react-dom: registry.npmjs.org/react-dom/16.13.1_react@16.13.1
+      resize-observer-polyfill: registry.npmjs.org/resize-observer-polyfill/1.5.1
+    dev: false
+    id: registry.npmjs.org/react-measure/1.4.7
+    name: react-measure
+    peerDependencies:
+      react: '>0.13.0'
+      react-dom: '>0.13.0'
+    resolution:
+      integrity: sha1-odLKDc/vBJeLesJjp2XctqCTb9s=
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/react-measure/-/react-measure-1.4.7.tgz'
+    version: 1.4.7
   registry.npmjs.org/react-number-format/4.4.1_react-dom@16.13.1+react@16.13.1:
     dependencies:
       prop-types: registry.npmjs.org/prop-types/15.7.2
@@ -19022,6 +19567,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/reselect/-/reselect-3.0.1.tgz'
     version: 3.0.1
+  registry.npmjs.org/resize-observer-polyfill/1.5.1:
+    dev: false
+    name: resize-observer-polyfill
+    resolution:
+      integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz'
+    version: 1.5.1
   registry.npmjs.org/resolve-cwd/2.0.0:
     dependencies:
       resolve-from: registry.npmjs.org/resolve-from/3.0.0
@@ -20969,6 +21522,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz'
     version: 0.3.0
+  registry.npmjs.org/tiny-emitter/2.1.0:
+    dev: false
+    name: tiny-emitter
+    resolution:
+      integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-2.1.0.tgz'
+    version: 2.1.0
   registry.npmjs.org/tiny-warning/1.0.3:
     dev: false
     name: tiny-warning
@@ -21371,6 +21932,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/type/-/type-2.0.0.tgz'
     version: 2.0.0
+  registry.npmjs.org/typed-function/1.1.1:
+    dev: false
+    engines:
+      node: '>= 6'
+    name: typed-function
+    resolution:
+      integrity: sha512-RbN7MaTQBZLJYzDENHPA0nUmWT0Ex80KHItprrgbTPufYhIlTePvCXZxyQK7wgn19FW5bnuaBIKcBb5mRWjB1Q==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/typed-function/-/typed-function-1.1.1.tgz'
+    version: 1.1.1
   registry.npmjs.org/typedarray/0.0.6:
     dev: false
     name: typedarray
@@ -22843,18 +23414,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz'
     version: 4.0.0
-  registry.npmjs.org/yaml/1.9.2:
-    dependencies:
-      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.9.6
+  registry.npmjs.org/yaml/1.10.0:
     dev: false
     engines:
       node: '>= 6'
     name: yaml
     resolution:
-      integrity: sha512-HPT7cGGI0DuRcsO51qC1j9O16Dh1mZ2bnXwsi0jrSpsLz0WxOLSLXfkABVl6bZO629py3CU+OMJtpNHDLB97kg==
+      integrity: sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
       registry: 'https://registry.npmjs.com/'
-      tarball: 'https://registry.npmjs.org/yaml/-/yaml-1.9.2.tgz'
-    version: 1.9.2
+      tarball: 'https://registry.npmjs.org/yaml/-/yaml-1.10.0.tgz'
+    version: 1.10.0
   registry.npmjs.org/yargs-parser/11.1.1:
     dependencies:
       camelcase: registry.npmjs.org/camelcase/5.3.1
@@ -23036,11 +23605,15 @@ specifiers:
   '@babel/template': ^7.7.4
   '@babel/traverse': ^7.7.4
   '@babel/types': ^7.7.4
+  '@emotion/core': ^10.0.28
+  '@emotion/styled': ^10.0.27
   '@hot-loader/react-dom': ^16.11.0
   '@material-ui/core': ^4.8.0
   '@material-ui/icons': ^4.5.1
   '@material-ui/styles': ^4.7.1
   '@mojotech/json-type-validation': ^3.1.0
+  '@projectstorm/react-canvas-core': ^6.1.1
+  '@projectstorm/react-diagrams': ^6.0.1-beta.7
   '@types/babel__core': ^7.1.3
   '@types/babel__generator': ^7.6.1
   '@types/babel__template': ^7.0.2
@@ -23082,9 +23655,12 @@ specifiers:
   clean-stack: ^2.2.0
   clean-webpack-plugin: ^3.0.0
   clone-deep: ^4.0.1
+  closest: ^0.0.1
   commander: ^4.0.1
   cookie-parser: ^1.4.4
   cross-env: ^6.0.3
+  cytoscape: ^3.15.0
+  dagre: ^0.8.5
   debug: ^4.1.1
   deepmerge: ^4.2.2
   dependency-cruiser: ^5.5.0
@@ -23101,6 +23677,7 @@ specifiers:
   levelup: ^4.3.2
   lodash: ^4.17.15
   lodash.clonedeepwith: ^4.5.0
+  mathjs: ^7.0.0
   minimist: ^1.2.0
   minipass: ^3.1.1
   minizlib: ^2.1.0
@@ -23119,10 +23696,14 @@ specifiers:
   nyc: ^14.1.1
   oracledb: ^4.1.0
   path: ^0.12.7
+  pathfinding: ^0.4.18
+  paths-js: ^0.4.10
   prettier: ^1.19.1
-  react: ^16.12.0
+  react: ^16.13.1
   react-ace-editor: 0.0.3
+  react-cytoscapejs: ^1.2.1
   react-dom: ^16.12.0
+  react-graph-editor: ^0.3.0
   react-hot-loader: ^4.12.18
   react-number-format: ^4.3.1
   react-scripts: ^3.3.0

@@ -230,6 +230,9 @@ const severityLongStr = (severity: Severity): string => {
 
 async function reloadData() {
     debugReload(`Started reloadData`);
+    // debugReload(`commented out - "return;" here!`);
+    console.trace(`reloadData is commented out "return;" here!`);
+    return;
     runStatus.lastRefresh = moment().format("HH:mm:ss");
     try {
         if (!urlBase) {

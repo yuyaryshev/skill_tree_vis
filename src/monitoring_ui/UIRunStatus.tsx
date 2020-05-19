@@ -32,6 +32,16 @@ import { GlobalUIState, RunStatus, tabNames } from "./RunStatus";
 
 const debugRender = debugjs("render");
 
+
+// GRAPH EDITOR START ////////////////////////
+// Статья на Medium https://blog.sourcerer.io/build-interactive-diagrams-with-storm-react-diagrams-f172ae26af9d
+// DEMOS https://github.com/projectstorm/react-diagrams/tree/master/packages/diagrams-demo-gallery/demos
+// https://github.com/projectstorm/react-diagrams
+// https://projectstorm.gitbook.io/react-diagrams/customizing/ports
+import {ProjectStormWidget} from './projectstorm_example';
+// GRAPH EDITOR END ////////////////////////
+
+
 const useStyles = makeStyles({
     root: {
         background: "#AAAAAA",
@@ -70,6 +80,10 @@ const useStyles = makeStyles({
     barColorPrimary: {
         backgroundColor: "#39b370",
     },
+    graphCanvas: {
+        width: "800px",
+        height: "600px",
+    },
     table: {},
 });
 
@@ -99,6 +113,12 @@ export const UIRunStatus: React.FC<{ runStatus: RunStatus; globalUIState: Global
     const classes = useStyles();
     debugRender("UIRunStatus");
 
+    const elements = [
+        { data: { id: 'one', label: 'Node 1' }, position: { x: 0, y: 0 } },
+        { data: { id: 'two', label: 'Node 2' }, position: { x: 100, y: 0 } },
+        { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } }
+    ];
+
     return useObserver(() => (
         <Grid container spacing={3} className={classes.root}>
             <Grid item>
@@ -126,145 +146,6 @@ export const UIRunStatus: React.FC<{ runStatus: RunStatus; globalUIState: Global
                             </TableRow>
                             <TableRow>
                                 <TableCell component="th" scope="row">
-                                    Состояние БД Oracle
-                                </TableCell>
-                                <TableCell>{runStatus.globalMessages.oracle}</TableCell>
-                                <TableCell>
-                                    <StatusIcon status={runStatus.globalMessages.oracle} />
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Состояние БД SQLite
-                                </TableCell>
-                                <TableCell>{runStatus.globalMessages.sqllite}</TableCell>
-                                <TableCell>
-                                    <StatusIcon status={runStatus.globalMessages.sqllite} />
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Состояние Jira
-                                </TableCell>
-                                <TableCell>{runStatus.globalMessages.jira}</TableCell>
-                                <TableCell>
-                                    <StatusIcon status={runStatus.globalMessages.jira} />
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Запросов к Jira в секунду
-                                </TableCell>
-                                <TableCell>{runStatus.jiraStatus.jiraRequestsPerSecond}</TableCell>
-                                <TableCell>
-                                    {runStatus.jiraStatus.jiraRequestsPerSecond > 20 ? (
-                                        <StatusIcon status="warn" />
-                                    ) : (
-                                        undefined
-                                    )}
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Количество ошибок к Jira в ответах
-                                </TableCell>
-                                <TableCell>{runStatus.jiraStatus.JiraResposeErrorsCount}</TableCell>
-                                <TableCell>
-                                    {runStatus.jiraStatus.JiraResposeErrorsCount > 1 ? (
-                                        <StatusIcon status="warn" />
-                                    ) : (
-                                        undefined
-                                    )}
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Среднее время отклика JIra
-                                </TableCell>
-                                <TableCell>{runStatus.jiraStatus.JiraResponseAverageTime}</TableCell>
-                                <TableCell>
-                                    {runStatus.jiraStatus.JiraResponseAverageTime > 1 ? (
-                                        <StatusIcon status="warn" />
-                                    ) : (
-                                        undefined
-                                    )}
-                                </TableCell>
-                            </TableRow>
-
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Последний запуск
-                                </TableCell>
-                                <TableCell>{runStatus.lastRun}</TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Время сервера Jira
-                                </TableCell>
-                                <TableCell>{runStatus.jiraTime}</TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Статус обновлен
-                                </TableCell>
-                                <TableCell>
-                                    <UIRunStatusLastRefreshTs runStatus={runStatus} globalUIState={globalUIState} />
-                                </TableCell>
-                                <TableCell>
-                                    <IconButton color="primary" onClick={globalUIState.requestFullRefresh}>
-                                        <ReplayIcon />
-                                    </IconButton>
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Версия
-                                </TableCell>
-                                <TableCell>{runStatus.versionStr}</TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Ресурсы Jira
-                                </TableCell>
-                                <TableCell component="th" scope="row">
-                                    {runStatus.resurses.Jira ? parseFloat(runStatus.resurses.Jira).toFixed(2) : "?"}
-                                </TableCell>
-                                <TableCell>
-                                    <LinearProgress
-                                        variant="determinate"
-                                        value={runStatus.resurses.Jira}
-                                        classes={{
-                                            colorPrimary: classes.colorPrimary,
-                                            barColorPrimary: classes.barColorPrimary,
-                                        }}
-                                    />
-                                </TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
-                                    Ресурсы БД
-                                </TableCell>
-                                <TableCell component="th" scope="row">
-                                    {runStatus.resurses.DB ? parseFloat(runStatus.resurses.DB).toFixed(2) : "?"}
-                                </TableCell>
-                                <TableCell>
-                                    <LinearProgress
-                                        variant="determinate"
-                                        value={runStatus.resurses.DB}
-                                        classes={{
-                                            colorPrimary: classes.colorPrimary,
-                                            barColorPrimary: classes.barColorPrimary,
-                                        }}
-                                    />
-                                </TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row">
                                     Ресурсы CPU
                                 </TableCell>
                                 <TableCell component="th" scope="row">
@@ -273,7 +154,7 @@ export const UIRunStatus: React.FC<{ runStatus: RunStatus; globalUIState: Global
                                 <TableCell>
                                     <LinearProgress
                                         variant="determinate"
-                                        value={runStatus.resurses.CPU}
+                                        value={runStatus.resurses.CPU || 30}
                                         classes={{
                                             colorPrimary: classes.colorPrimary,
                                             barColorPrimary: classes.barColorPrimary,
@@ -406,7 +287,13 @@ export const UIRunStatus: React.FC<{ runStatus: RunStatus; globalUIState: Global
                         <Tab label="JobStats" icon={<SubjectIcon />} />
                     </Tabs>
 
-                    {'TBD'}
+                    <div className={classes.graphCanvas}>
+                        <ProjectStormWidget />
+                    </div>
+                    {
+                        //<CytoscapeComponent elements={elements} style={ { width: '600px', height: '600px' } } />
+                    }
+                    {'TBD3'}
                 </Paper>
             </Grid>
         </Grid>
