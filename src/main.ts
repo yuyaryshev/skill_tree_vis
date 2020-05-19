@@ -46,7 +46,8 @@ export function taskColor(t: Task): string {
 }
 
 export function processTasksFile(sourcePath: string, targetPath: string, diagName: string) {
-    const taskFileContent = readFileSync(sourcePath, "utf-8");
+    let taskFileContent = readFileSync(sourcePath, "utf-8");
+    taskFileContent = taskFileContent.split("\t").join("    ");
     const taskMaps: Map<string, Task> = new Map();
     const parentStack: Task[] = [];
 
@@ -63,33 +64,33 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
 
         line++;
         let taskLine = taskLine0.trimEnd();
-        if (!taskLine.length) continue;
 
         const lv = Math.round((taskLine.length - taskLine.trimLeft().length) / 4);
         taskLine = taskLine.trim();
+        if (!taskLine.length) continue;
 
         while (true) {
             if (taskLine.startsWith("+")) {
                 done = true;
-                taskLine = taskLine.substr(1).trim()
+                taskLine = taskLine.substr(1).trim();
                 continue;
             }
 
             if (taskLine.startsWith("-")) {
                 done = false;
-                taskLine = taskLine.substr(1).trim()
+                taskLine = taskLine.substr(1).trim();
                 continue;
             }
-            
+
             if (taskLine.startsWith("!")) {
                 escalated = true;
-                taskLine = taskLine.substr(1).trim()
+                taskLine = taskLine.substr(1).trim();
                 continue;
             }
-            
+
             if (taskLine.startsWith(">")) {
                 inWork = true;
-                taskLine = taskLine.substr(1).trim()
+                taskLine = taskLine.substr(1).trim();
                 continue;
             }
             break;
@@ -160,7 +161,7 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
             }
         }
 
-        const parent = (lv - 1 >= 0 ? parentStack[lv - 1] : undefined);
+        const parent = lv - 1 >= 0 ? parentStack[lv - 1] : undefined;
         const task: Task = {
             line,
             id,

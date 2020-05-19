@@ -6,7 +6,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node --trace-warnings ts_out/src/main.js run",
-        "watch": "babel src --config-file ./babel.ts.config.js --out-dir ts_out/src --extensions \".ts,.tsx\" --source-maps inline -w",
+        "watch": "rmdir ts_out /Q /S & babel src --config-file ./babel.ts.config.js --out-dir ts_out/src --extensions \".ts,.tsx\" --source-maps inline -w",
         "web_server": "webpack --config webpack.react.config.js",
         "build": "babel src --config-file ./babel.ts.config.js --out-dir ts_out/src --extensions \".ts,.tsx\" --source-maps inline && webpack --config webpack.react.config.js",
         "build_run": "babel src --config-file ./babel.ts.config.js --out-dir ts_out/src --extensions \".ts,.tsx\" --source-maps inline && webpack --config webpack.react.config.js && node ts_out/src/main.js run",

@@ -4,7 +4,6 @@
 // DEMOS https://github.com/projectstorm/react-diagrams/tree/master/packages/diagrams-demo-gallery/demos
 // https://github.com/projectstorm/react-diagrams
 // https://projectstorm.gitbook.io/react-diagrams/customizing/ports
-import {ProjectStormWidget} from './projectstorm_example';
 // GRAPH EDITOR END ////////////////////////
 
 import createEngine, { DiagramModel, DefaultNodeModel, DefaultLinkModel } from '@projectstorm/react-diagrams';
