@@ -66,7 +66,7 @@ export class DemoCanvasWidget extends React.Component<DemoCanvasWidgetProps> {
 }
 //....................................................
 
-export const ProjectStormExample = () => {
+export const ProjectStormExample2 = () => {
     //1) setup the diagram engine
     var engine = createEngine();
 

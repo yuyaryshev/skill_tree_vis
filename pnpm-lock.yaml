@@ -63,6 +63,7 @@ dependencies:
   '@types/sinon-chai': registry.npmjs.org/@types/sinon-chai/3.2.4
   '@types/uuid': registry.npmjs.org/@types/uuid/3.4.9
   '@types/watch': registry.npmjs.org/@types/watch/1.0.1
+  app-root-path: registry.npmjs.org/app-root-path/3.0.0
   arraybuffer-to-string: registry.npmjs.org/arraybuffer-to-string/1.0.2
   assert-never: registry.npmjs.org/assert-never/1.2.0
   axios: registry.npmjs.org/axios/0.19.2
@@ -5332,6 +5333,16 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/anymatch/-/anymatch-3.1.1.tgz'
     version: 3.1.1
+  registry.npmjs.org/app-root-path/3.0.0:
+    dev: false
+    engines:
+      node: '>= 6.0.0'
+    name: app-root-path
+    resolution:
+      integrity: sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/app-root-path/-/app-root-path-3.0.0.tgz'
+    version: 3.0.0
   registry.npmjs.org/append-transform/1.0.0:
     dependencies:
       default-require-extensions: registry.npmjs.org/default-require-extensions/2.0.0
@@ -23639,6 +23650,7 @@ specifiers:
   '@types/sinon-chai': ^3.2.3
   '@types/uuid': ^3.4.6
   '@types/watch': ^1.0.1
+  app-root-path: ^3.0.0
   arraybuffer-to-string: ^1.0.2
   assert-never: ^1.2.0
   axios: ^0.19.2

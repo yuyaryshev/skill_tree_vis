@@ -32,14 +32,8 @@ import { GlobalUIState, RunStatus, tabNames } from "./RunStatus";
 
 const debugRender = debugjs("render");
 
-
-// GRAPH EDITOR START ////////////////////////
-// Статья на Medium https://blog.sourcerer.io/build-interactive-diagrams-with-storm-react-diagrams-f172ae26af9d
-// DEMOS https://github.com/projectstorm/react-diagrams/tree/master/packages/diagrams-demo-gallery/demos
-// https://github.com/projectstorm/react-diagrams
-// https://projectstorm.gitbook.io/react-diagrams/customizing/ports
-import {ProjectStormWidget} from './projectstorm_example';
-// GRAPH EDITOR END ////////////////////////
+import {ProjectStormExample} from './projectstorm_example';
+import {ProjectStormExample2} from './projectstorm_example2';
 
 
 const useStyles = makeStyles({
@@ -288,7 +282,7 @@ export const UIRunStatus: React.FC<{ runStatus: RunStatus; globalUIState: Global
                     </Tabs>
 
                     <div className={classes.graphCanvas}>
-                        <ProjectStormWidget />
+                        <ProjectStormExample />
                     </div>
                     {
                         //<CytoscapeComponent elements={elements} style={ { width: '600px', height: '600px' } } />

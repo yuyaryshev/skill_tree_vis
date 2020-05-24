@@ -1,8 +1,12 @@
 import moment from "moment";
 import { readFileSync, writeFileSync } from "fs";
 import { spawnSync } from "child_process";
+import { strReplace, removeUndefined, fjmap } from "Ystd";
+import commander from "commander";
+import { render } from "./template";
 
 export interface Task {
+    children: Task[];
     line: number;
     parent: Task | undefined;
     id: string;
@@ -10,6 +14,8 @@ export interface Task {
     reqIds: string[];
     req: Task[];
     lv: number;
+    style: string;
+    childRelStyle:string;
 
     changed: boolean;
     inWork: boolean;
@@ -30,23 +36,63 @@ export function taskStr(t: Task) {
     return r.trim();
 }
 
+export type RelType = "child" | "req";
 export interface Rel {
+    rt: RelType;
     s: Task;
     t: Task;
+    prime?: boolean;
+    style?: string;
 }
 
 // https://www.graphviz.org/doc/info/colors.html
 // pastel28
-export function taskColor(t: Task): string {
-    if (t.escalated) return `#FFFFAA`;
-    if (t.done) return `#AAFFAA`;
-    if (t.cancelled) return `#FFAAAA`;
-    if (t.inWork) return `#AAFFFF`;
-    return `#DDDDDD`;
+export function taskStyle(opts:ProcessTasksFileOpts, t: Task): string {
+    const shape = t.changed ? "" : `shape="box", `;
+    if (t.escalated) return `${shape} color="${"#FFFFAA"}}`;
+    if (t.done) return `${shape} color="${"#AAFFAA"}"`;
+    if (t.cancelled) return `${shape} color="${"#FFAAAA"}"`;
+    if (t.inWork) return `${shape} color="${"#AAFFFF"}"`;
+    if (!opts.grayInactive || t.parent?.inWork) return `${shape} color="${"#DDDDDD"}"`;
+    return `${shape} color="${"#EEEEEE"}" fontcolor="${"#CCCCCC"}"`;
 }
 
-export function processTasksFile(sourcePath: string, targetPath: string, diagName: string) {
+// https://www.graphviz.org/doc/info/colors.html
+// pastel28
+export function relStyle(opts:ProcessTasksFileOpts, r: Rel): string {
+    if (!opts.grayInactive || r.s.parent?.inWork) return `color="${"#000000"}"`;
+    return `color="${"#DDDDDD"}"`;
+}
+
+// https://www.graphviz.org/doc/info/colors.html
+// pastel28
+export function childRelStyle(opts:ProcessTasksFileOpts, r: Task): string {
+    if (!opts.grayInactive || r.inWork) return `color="${"#000000"}"`;
+    return `color="${"#DDDDDD"}"`;
+}
+
+export const defaultProcessTasksFileOpts = {
+    sourcePath: "tasks.txt",
+    targetPath: "tasks.dot"
+};
+
+export interface ProcessTasksFileOpts {
+    sourcePath: string;
+    templatePath?: string;
+    targetPath: string;
+    showInvisible?: boolean;
+    grayInactive?: boolean;
+}
+
+export function fixTaskName(name: string): string {
+    return strReplace(name, '"', "'");
+}
+
+export function parseTasksFile(opts0: Partial<ProcessTasksFileOpts>) {
+    const opts = { ...defaultProcessTasksFileOpts, ...opts0 };
+    const { sourcePath, targetPath, showInvisible } = opts;
     let taskFileContent = readFileSync(sourcePath, "utf-8");
+
     taskFileContent = taskFileContent.split("\t").join("    ");
     const taskMaps: Map<string, Task> = new Map();
     const parentStack: Task[] = [];
@@ -54,6 +100,8 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
     console.log(moment().format(), "\n");
 
     let line = 0;
+    let ranked: Task[][] = [];
+
     for (let taskLine0 of taskFileContent.split("\n")) {
         // =============== Парсинг строк ======================
         let done: boolean = false;
@@ -100,7 +148,7 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
         name = (name || "").trim();
         modifiersStr = (modifiersStr || "").trim();
 
-        let id = "noname" + (taskMaps.size + 1);
+        let id = "n" + (taskMaps.size + 1);
         if (!name.length) throw new Error(`Incorrect 'name' in line ${line}`);
 
         let reqIds: string[] = [];
@@ -118,12 +166,11 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
                 .map(s => s.trim())
                 .filter(s => s.length);
 
-            if (id.trim() === "0007") debugger;
-
             switch (mName) {
                 case "id":
                     id = mValues[0].trim();
-                    if (!id) throw new Error(`Incorrect id in line ${line}`);
+                    if (!id) throw new Error(`Incorrect id '${id}' in line ${line}`);
+                    if (!id.match(/[_a-zA-Zа-яА-Я][_a-zA-Zа-яА-Я0-9]+/g)) throw new Error(`Incorrect id '${id}' in line ${line}`);
                     break;
 
                 case "r":
@@ -163,9 +210,10 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
 
         const parent = lv - 1 >= 0 ? parentStack[lv - 1] : undefined;
         const task: Task = {
+            children: [],
             line,
             id,
-            name,
+            name: fixTaskName(name),
             reqIds,
             lv,
             parent,
@@ -175,14 +223,27 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
             inWork,
             escalated,
             changed,
-            cancelled
+            cancelled,
+            style:"",
+            childRelStyle:"",
         };
+
+        task.style = taskStyle(opts, task);
+        task.childRelStyle = childRelStyle(opts, task);
+        if (parent) parent.children.push(task);
+        ranked[lv] = ranked[lv] || [];
+        ranked[lv].push(task);
 
         parentStack[lv] = task;
         if (taskMaps.has(id)) throw new Error(`Dublicate 'id' in line ${line}`);
         taskMaps.set(task.id, task);
         // =============== Парсинг строк END ======================
     }
+
+    const childrenRanks: string[] = [];
+    for (let [, task] of taskMaps)
+        if (task.children.length)
+            childrenRanks.push(`lv${task.lv + 1} -> ${fjmap(task.children, " -> ", child => child.id)}`);
 
     // Связывание req по ссылкам
     for (let [, task] of taskMaps)
@@ -193,15 +254,16 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
         }
 
     const rels: Rel[] = [];
-
-    // Формирование данных для диаграммы
     const tasks: Task[] = [];
     for (let [, task] of taskMaps) {
         // task.name = taskStr(task);
         tasks.push(task);
-        if (task.parent) rels.push({ s: task, t: task.parent });
-        for (let rq of task.req) rels.push({ s: rq, t: task });
+        if (task.parent) rels.push({ s: task, t: task.parent, rt:"child", prime: task.parent.children[task.parent.children.length-1] === task});
+        for (let rq of task.req) rels.push({ s: rq, t: task, rt:"req", prime: true });
     }
+
+    for(let rel of rels)
+        rel.style = relStyle(opts, rel);
 
     tasks.sort((a: Task, b: Task) => {
         let r = a.lv - b.lv;
@@ -210,19 +272,48 @@ export function processTasksFile(sourcePath: string, targetPath: string, diagNam
         return a.name < b.name ? 1 : -1;
     });
 
-    const graph_viz_str = `
-digraph ${diagName} {
-    size="30,9";
-    node [color=lightgray, style=filled, fontname=Arial, colorscheme=pastel28];
-${rels.map(r => `    n${r.s.id} -> n${r.t.id};`).join("\n")}
-${tasks
-    .map(t => `    n${t.id} [label="${t.name}", ${t.changed ? "" : `shape="box"`} color="${taskColor(t)}"];`)
-    .join("\n")}
+    return {
+        rels,
+        tasks,
+        childrenRanks,
+        ranked,
+        invNode: showInvisible ? " " : " [style=invisible]",
+        invLine: showInvisible ? " [color=red]" : " [color=invis]"
+    };
 }
-`;
+
+export function processTasksFile(opts: Partial<ProcessTasksFileOpts>) {
+    const { sourcePath, templatePath, targetPath, showInvisible } = { ...defaultProcessTasksFileOpts, ...opts };
+    const data = parseTasksFile(opts);
+    const graph_viz_str = (templatePath ? require(templatePath).render : render)(data);
     writeFileSync(targetPath, graph_viz_str, "utf-8");
 }
 
-processTasksFile("tasks.txt", "tasks.dot", "tasks");
-// spawnSync("cmd", ["/c", "graph_viz.bat"]);
+
+export type Data = ReturnType<typeof parseTasksFile>;
+
+const program = new commander.Command();
+program.version("0.0.1").description("skill_tree_vis converts simple text plans into visual graph trees");
+const parsed = program
+    .arguments("<source>")
+    .option("-o, --output <string>", "Name of output file")
+    .option("-t, --template <string>", "Name of template file")
+    .option("--showInvisible", "Shows invisible links")
+    .option("--grayInactive", "Grays out inactive branches")
+    .parse(process.argv);
+
+const o = program.opts();
+const targetPath = program.args[0];
+
+const opts: Partial<ProcessTasksFileOpts> = {};
+
+opts.sourcePath = program.args[0];
+opts.targetPath = o.output;
+opts.templatePath = o.template;
+opts.showInvisible = o.showInvisible;
+opts.grayInactive = o.grayInactive;
+removeUndefined(opts);
+
+//opts.showInvisible = true;
+processTasksFile(opts);
 console.log("FINISHED!");

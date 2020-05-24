@@ -1,27 +1,15 @@
 import { ITokenLike, Lexer } from "Ystd";
-
-export type CompilationErrorSeverity = "e" | "w" | "i";
-export const severityLongStr = (severity: CompilationErrorSeverity) => {
-    switch (severity) {
-        case "e":
-            return "ERROR";
-        case "w":
-            return "WARN";
-        case "i":
-            return "INFO";
-    }
-    return "UNKNOWN";
-};
+import { Severity, severityLongStr } from "./Severity";
 
 export class CompilationError<CompilationContextT> extends Error {
     compilationContext?: CompilationContextT | undefined;
     lexer?: Lexer<CompilationContextT> | undefined;
-    severity: CompilationErrorSeverity;
+    severity: Severity;
     cpl: string;
     token?: ITokenLike | undefined;
     shortMessage: string;
 
-    constructor(severity: "e" | "w" | "i", cpl: string, where: Lexer<CompilationContextT> | ITokenLike | undefined, shortMessage: string) {
+    constructor(severity: Severity, cpl: string, where: Lexer<CompilationContextT> | ITokenLike | undefined, shortMessage: string) {
         let lexer: Lexer<CompilationContextT> | ITokenLike | undefined = (where instanceof Lexer ? where : undefined);
         const token: ITokenLike | undefined = !lexer && where && (where as any).line ? (where as any) : undefined;
         if(token)

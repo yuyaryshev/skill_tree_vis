@@ -1,11 +1,16 @@
-import {readFileSync, writeFileSync} from "fs";
+import { readFileSync, writeFileSync } from "fs";
 
-export const writeFileSyncIfChanged = (filePath: string, content: string, encoding: string = "utf-8") => {
-    let oldContent;
+export const writeFileSyncIfChanged = (fileName: string, content: string, encoding: string = "utf-8") => {
+    let current: string | undefined;
     try {
-        readFileSync(filePath, "utf-8");
+        current = readFileSync(fileName, encoding);
     } catch (e) {
-        if (e.code !== "ENOENT") throw e;
+		if (e.code !== "ENOENT") throw e;
+	}
+
+    if (!current || current !== content) {
+        writeFileSync(fileName, content, encoding);
+        return true;
     }
-    if (!oldContent || oldContent !== content) writeFileSync(filePath, content, "utf-8");
+    return false;
 };

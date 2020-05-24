@@ -1,3 +1,4 @@
+export * from "./Severity";
 export * from "./PrimiriveValue";
 export * from "./removePrefix";
 export * from "./removeSuffix";
@@ -67,6 +68,21 @@ export * from "./firstChar";
 export * from "./tokenWriter";
 export * from "./removeDublicates";
 export * from "./dbgStringify";
+export * from "./consoleMsg";
+export * from "./deleteFileIfExists";
+export * from "./globalHandler";
+export * from "./makeMomentInterval";
+export * from "./ymutex";
+export * from "./waitAll";
+export * from "./dummyFunc";
+export * from "./sortObjects";
+export * from "./containerFuncs";
+export * from "./mapToObject";
+export * from "./manageableTimer";
+export * from "./projectDir";
+export * from "./fjmap";
+export * from "./fmap";
+export * from "./isNumber";
 
 // Excluded:
 // export * from './intervals';         // has equal function
