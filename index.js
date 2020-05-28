@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-require("./lib").run();
+require("../ts_out/src/main.js");
+
