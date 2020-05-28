@@ -1,7 +1,7 @@
 {
     "name": "skill_tree_vis",
     "version": "1.0.0",
-    "description": "A small package for visualizing "skill-tree" like text plans",
+    "description": "A small package for visualizing 'skill-tree' like text plans",
     "main": "index.js",
 	"bin": {
 		"sktree": "./index.js"
