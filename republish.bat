@@ -1,0 +1,1 @@
+npm publish && npm uninstall -g skill_tree_vis && npm install -g skill_tree_vis && skill_tree_vis

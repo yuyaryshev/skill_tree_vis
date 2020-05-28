@@ -1,9 +1,11 @@
 {
-    "name": "issue_loader",
+    "name": "skill_tree_vis",
     "version": "1.0.0",
-    "private": true,
-    "description": "Load issues from Jira and post them to Oracle DB",
+    "description": "A small package for visualizing "skill-tree" like text plans",
     "main": "index.js",
+	"bin": {
+		"sktree": "./index.js"
+	},
     "scripts": {
         "start": "node --trace-warnings ts_out/src/main.js run",
         "watch": "rmdir ts_out /Q /S & babel src --config-file ./babel.ts.config.js --out-dir ts_out/src --extensions \".ts,.tsx\" --source-maps inline -w",
@@ -14,7 +16,7 @@
         "web_server_dev": "webpack-dev-server --config webpack.react.config.js --open"
     },
     "author": "Yuri Yaryshev",
-    "license": "MIT",
+	"license": "Unlicense",
     "nyc": "^14.1.1",
     "resolutions": {},
     "plainDependencies": true,
@@ -22,6 +24,11 @@
         "tabWidth": 4,
         "printWidth": 120
     },
+	"homepage": "https://github.com/yuyaryshev/skill_tree_vis",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yuyaryshev/skill_tree_vis"
+	},
     "dependencies": {
         "@babel/cli": "^7.8.4",
         "@babel/core": "^7.9.6",

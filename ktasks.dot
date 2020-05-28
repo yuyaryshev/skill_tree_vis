@@ -1,0 +1,283 @@
+
+    digraph tasks {
+    size="30,9";
+    rankdir="LR";
+    node [color=lightgray, style=filled, fontname=Arial, colorscheme=pastel28];
+
+    // prime rels
+    n5 -> n4 [dir=forward color="#000000"];
+    n6 -> n5 [dir=forward color="#000000"];
+    n15 -> n14 [dir=forward color="#000000"];
+    n19 -> n14 [dir=forward color="#000000"];
+    n20 -> n5 [dir=forward color="#000000"];
+    n21 -> n20 [dir=forward color="#000000"];
+    n25 -> n20 [dir=forward color="#000000"];
+    n27 -> n26 [dir=forward color="#000000"];
+    n38 -> n26 [dir=forward color="#000000"];
+    n40 -> n39 [dir=forward color="#DDDDDD"];
+    n41 -> n40 [dir=forward color="#DDDDDD"];
+    n48 -> n40 [dir=forward color="#DDDDDD"];
+    n50 -> n49 [dir=forward color="#000000"];
+    n72 -> n49 [dir=forward color="#000000"];
+    n74 -> n73 [dir=forward color="#000000"];
+    n81 -> n73 [dir=forward color="#000000"];
+    n83 -> n82 [dir=forward color="#000000"];
+    n97 -> n82 [dir=forward color="#000000"];
+    n99 -> n98 [dir=forward color="#000000"];
+    n104 -> n98 [dir=forward color="#000000"];
+    n105 -> n4 [dir=forward color="#000000"];
+    n106 -> n105 [dir=forward color="#000000"];
+    n111 -> n105 [dir=forward color="#000000"];
+    n113 -> n112 [dir=forward color="#000000"];
+    n116 -> n112 [dir=forward color="#000000"];
+
+    // non prime rels
+    n7 -> n5  [color=invis];
+    n8 -> n5  [color=invis];
+    n9 -> n5  [color=invis];
+    n10 -> n5  [color=invis];
+    n11 -> n5  [color=invis];
+    n12 -> n5  [color=invis];
+    n13 -> n5  [color=invis];
+    n14 -> n5  [color=invis];
+    n16 -> n14  [color=invis];
+    n17 -> n14  [color=invis];
+    n18 -> n14  [color=invis];
+    n22 -> n20  [color=invis];
+    n23 -> n20  [color=invis];
+    n24 -> n20  [color=invis];
+    n26 -> n4  [color=invis];
+    n28 -> n26  [color=invis];
+    n29 -> n26  [color=invis];
+    n30 -> n26  [color=invis];
+    n31 -> n26  [color=invis];
+    n32 -> n26  [color=invis];
+    n33 -> n26  [color=invis];
+    n34 -> n26  [color=invis];
+    n35 -> n26  [color=invis];
+    n36 -> n26  [color=invis];
+    n37 -> n26  [color=invis];
+    n39 -> n4  [color=invis];
+    n42 -> n40  [color=invis];
+    n43 -> n40  [color=invis];
+    n44 -> n40  [color=invis];
+    n45 -> n40  [color=invis];
+    n46 -> n40  [color=invis];
+    n47 -> n40  [color=invis];
+    n49 -> n4  [color=invis];
+    n51 -> n49  [color=invis];
+    n52 -> n49  [color=invis];
+    n53 -> n49  [color=invis];
+    n54 -> n49  [color=invis];
+    n55 -> n49  [color=invis];
+    n56 -> n49  [color=invis];
+    n57 -> n49  [color=invis];
+    n58 -> n49  [color=invis];
+    n59 -> n49  [color=invis];
+    n60 -> n49  [color=invis];
+    n61 -> n49  [color=invis];
+    n62 -> n49  [color=invis];
+    n63 -> n49  [color=invis];
+    n64 -> n49  [color=invis];
+    n65 -> n49  [color=invis];
+    n66 -> n49  [color=invis];
+    n67 -> n49  [color=invis];
+    n68 -> n49  [color=invis];
+    n69 -> n49  [color=invis];
+    n70 -> n49  [color=invis];
+    n71 -> n49  [color=invis];
+    n73 -> n4  [color=invis];
+    n75 -> n73  [color=invis];
+    n76 -> n73  [color=invis];
+    n77 -> n73  [color=invis];
+    n78 -> n73  [color=invis];
+    n79 -> n73  [color=invis];
+    n80 -> n73  [color=invis];
+    n82 -> n4  [color=invis];
+    n84 -> n82  [color=invis];
+    n85 -> n82  [color=invis];
+    n86 -> n82  [color=invis];
+    n87 -> n82  [color=invis];
+    n88 -> n82  [color=invis];
+    n89 -> n82  [color=invis];
+    n90 -> n82  [color=invis];
+    n91 -> n82  [color=invis];
+    n92 -> n82  [color=invis];
+    n93 -> n82  [color=invis];
+    n94 -> n82  [color=invis];
+    n95 -> n82  [color=invis];
+    n96 -> n82  [color=invis];
+    n98 -> n4  [color=invis];
+    n100 -> n98  [color=invis];
+    n101 -> n98  [color=invis];
+    n102 -> n98  [color=invis];
+    n103 -> n98  [color=invis];
+    n107 -> n105  [color=invis];
+    n108 -> n105  [color=invis];
+    n109 -> n105  [color=invis];
+    n110 -> n105  [color=invis];
+    n114 -> n112  [color=invis];
+    n115 -> n112  [color=invis]; 
+    
+    // tasks
+    n4 [label="Управленческая отчётность" , shape="box",  color="#AAFFFF"];
+    n1 [label="Сделанная задача" , shape="box",  color="#AAFFAA"];
+    n112 [label="Портал BIHELP" , shape="box",  color="#AAFFFF"];
+    n2 [label="Плановая задача" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n3 [label="Задача в работе" , shape="box",  color="#AAFFFF"];
+    n73 [label="Техдолг" , shape="box",  color="#AAFFFF"];
+    n113 [label="Создать и настроить почтовый ящик BIHELP" , shape="box",  color="#AAFFFF"];
+    n49 [label="Разработка Issue Loader" , shape="box",  color="#AAFFFF"];
+    n98 [label="Разработка ETL" , shape="box",  color="#AAFFFF"];
+    n5 [label="Отчётные формы" , shape="box",  color="#AAFFFF"];
+    n82 [label="Орг вопросы" , shape="box",  color="#AAFFFF"];
+    n105 [label="Документация" , shape="box",  color="#AAFFFF"];
+    n114 [label="Детализация статуса ожидание пререквизита" , shape="box",  color="#DDDDDD"];
+    n116 [label="Автоматический перенос доступов пользователй из других проектов--_mixed 0030EB4E43258576_--" , shape="box",  color="#DDDDDD"];
+    n39 [label="Yjob - починить зависимости" , shape="box",  color="#DDDDDD"];
+    n115 [label="SFA обращения - проработать как загружать в отчет по обращениям" , shape="box",  color="#DDDDDD"];
+    n26 [label="DevOps" , shape="box",  color="#AAFFFF"];
+    n85 [label="Составить список точек входа во все отделы" , shape="box",  color="#AAFFFF"];
+    n99 [label="Создать новые таблицы для формирования отчетности на основе инкрементального ETL" , shape="box",  color="#AAFFFF"];
+    n107 [label="Создание единого стандарта" , shape="box",  color="#DDDDDD"];
+    n9 [label="Собрать орг структуру BI" , shape="box",  color="#DDDDDD"];
+    n33 [label="Сделать проверку строчных" , shape="box",  color="#DDDDDD"];
+    n52 [label="Решение проблем с производительностью и стабильностью загрузки" , shape="box",  color="#DDDDDD"];
+    n96 [label="Репликация бюджетных задач - изолированное хранение" , shape="box",  color="#DDDDDD"];
+    n101 [label="Реорганизация ETL внутренней отчетности" , shape="box",  color="#AAFFFF"];
+    n51 [label="Ремонт yya_sql_gen и issue_loader" , shape="box",  color="#AAFFFF"];
+    n67 [label="Режим deploy из UI мониторинга" , shape="box",  color="#DDDDDD"];
+    n12 [label="Реализация в Jira списка целей по бизнес-задаче" , shape="box",  color="#DDDDDD"];
+    n108 [label="Разместить все отчеты в раздел Confluence" , shape="box",  color="#DDDDDD"];
+    n32 [label="Разделить тесты на интеграционные и unit" , shape="box",  color="#DDDDDD"];
+    n61 [label="Проверки на коммит" , shape="box",  color="#DDDDDD"];
+    n29 [label="Проверка перед Commit'ом - локально" , shape="box",  color="#DDDDDD"];
+    n80 [label="Почему-то не стартует консоль мониторинга" , shape="box",  color="#DDDDDD"];
+    n62 [label="Покрыть тестами start.js" , shape="box",  color="#DDDDDD"];
+    n75 [label="Перевести UI на сгенерированные tsx файлы в части JobContext" , shape="box",  color="#DDDDDD"];
+    n66 [label="Пароль для администрирования в UI мониторинга" , shape="box",  color="#DDDDDD"];
+    n93 [label="Оформить персональные доступы для команды управленческой отчётности" , shape="box",  color="#DDDDDD"];
+    n20 [label="Отчётность по SLA" , shape="box",  color="#AAFFFF"];
+    n7 [label="Отчет по шаблонам на случай аварии в Issue_loader" , shape="box",  color="#DDDDDD"];
+    n95 [label="Отч BI - Планирование задач" , shape="box",  color="#DDDDDD"];
+    n92 [label="Отслеживание новых" , shape="box",  color="#DDDDDD"];
+    n14 [label="Основные отчётные формы (Backlog, трудоёмкость. длительность)" , shape="box",  color="#AAFFFF"];
+    n100 [label="Организовать перенос загрузки основных таблиц для формирования отчетности в инкрементальный режим" , shape="box",  color="#AAFFFF"];
+    n91 [label="Оптимизировать доску под разработку команды управленческой отчётности" , shape="box",  color="#DDDDDD"];
+    n109 [label="Описать ETL в Confluence" , shape="box",  color="#DDDDDD"];
+    n106 [label="Описание методики управленческой отчётности" , shape="box",  color="#AAFFFF"];
+    n102 [label="Обучение Typescript, передача yya_sql_gen" , shape="box",  color="#AAFFFF"];
+    n86 [label="Обратная связь от заказчиков" , shape="box",  color="#AAFFFF"];
+    n94 [label="Обратная связь внутренняя" , shape="box",  color="#DDDDDD"];
+    n34 [label="Настроить ротацию" , shape="box",  color="#DDDDDD"];
+    n27 [label="Настроить мониторинг ресурсов сервера" , shape="box",  color="#AAFFFF"];
+    n31 [label="Настроить eslint" , shape="box",  color="#DDDDDD"];
+    n38 [label="Настроить DevOps через Docker образы" , shape="box",  color="#DDDDDD"];
+    n77 [label="Найти и удалить старый код" , shape="box",  color="#DDDDDD"];
+    n79 [label="Миграция таблиц Sqlite и Oracle deploy" , shape="box",  color="#DDDDDD"];
+    n74 [label="Корректировка названия полей" , shape="box",  color="#DDDDDD"];
+    n89 [label="Коммуникация по регламентным работам" , shape="box",  color="#DDDDDD"];
+    n84 [label="Коммуникация по ведению проектов" , shape="box",  color="#AAFFFF"];
+    n56 [label="Коды в кастомных полях - справочниках, ошибки при загрузке" , shape="box",  color="#DDDDDD"];
+    n78 [label="Код доменов dbd* разбросан по исходникам, приводит к ошибкам" , shape="box",  color="#DDDDDD"];
+    n55 [label="Исправить загрузку дат из Jira в Oracle" , shape="box",  color="#DDDDDD"];
+    n53 [label="Исправить все ошибки в issue_loader TODO_FATAL_ERROR" , shape="box",  color="#DDDDDD"];
+    n63 [label="Интерфейс ввода данных: тип задачи, бизнес область, таблица" , shape="box",  color="#DDDDDD"];
+    n69 [label="Заменить x && x.y на новый optional chaining operator x?.y и на ?? оператор" , shape="box",  color="#DDDDDD"];
+    n13 [label="Загрузка целей по бизнес-задачам в БД" , shape="box",  color="#DDDDDD"];
+    n58 [label="Загрузить флаг Бизнес задача и поля Бизнес задач" , shape="box",  color="#DDDDDD"];
+    n11 [label="Загрузить справочник пользователей и справочник департаментов" , shape="box",  color="#DDDDDD"];
+    n72 [label="Загрузить релизы" , shape="box",  color="#DDDDDD"];
+    n71 [label="Загрузить компоненты" , shape="box",  color="#DDDDDD"];
+    n65 [label="Загрузить кастомные поля - прочие типы" , shape="box",  color="#DDDDDD"];
+    n64 [label="Загрузить задачи в виде key-value" , shape="box",  color="#DDDDDD"];
+    n88 [label="Доступы для проекта BIHELP" , shape="box",  color="#DDDDDD"];
+    n57 [label="Доработки загрузки комментариев STATUS и EVENT" , shape="box",  color="#DDDDDD"];
+    n60 [label="Доработать тесты" , shape="box",  color="#DDDDDD"];
+    n6 [label="Добавить в основной отчет агрегацию по департаментам" , shape="box",  color="#AAFFFF"];
+    n103 [label="Добавить в генератор SQL возможность инкрементального обновления одноуровневой иерархии задач" , shape="box",  color="#AAFFFF"];
+    n104 [label="Добавить в генератор SQL возможность инкрементального обновления многоуровневой иерархии задач" , shape="box",  color="#DDDDDD"];
+    n10 [label="Добавить Level и parent_login в BITEAM_SDIM" , shape="box",  color="#DDDDDD"];
+    n87 [label="Внутренний регламент BI и смежных подразделений" , shape="box",  color="#DDDDDD"];
+    n83 [label="Визуализация плана по развитию внутренней управленческой отчётности" , shape="box",  color="#AAFFFF"];
+    n37 [label="В Artifactory сделать место под Docker образ issue_loader. Также сделать технические учетки." , shape="box",  color="#DDDDDD"];
+    n68 [label="Безопасное выключение загрузки" , shape="box",  color="#DDDDDD"];
+    n90 [label="Анализ по проектам Jira" , shape="box",  color="#DDDDDD"];
+    n110 [label="Актуализировать схему стандарта в Visio" , shape="box",  color="#DDDDDD"];
+    n111 [label="Актуализировать settings_example.json" , shape="box",  color="#DDDDDD"];
+    n70 [label="Автопроверки" , shape="box",  color="#DDDDDD"];
+    n30 [label="Автоматизировать проверки перед коммитом на стороне сервера" , shape="box",  color="#DDDDDD"];
+    n40 [label="Автоматизации в Jira" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n81 [label="settings.tables переименования таблиц - убрать везде по коду" , shape="box",  color="#DDDDDD"];
+    n50 [label="issue_loader - оптимизации" , shape="box",  color="#AAFFFF"];
+    n36 [label="better-sqlite3 - разобраться со сборкой" , shape="box",  color="#DDDDDD"];
+    n76 [label="Yjob - JobContext и Job никогда не удаляются" , shape="box",  color="#DDDDDD"];
+    n35 [label="WA по пакету better-sqlite3" , shape="box",  color="#DDDDDD"];
+    n54 [label="LoadUnload" , shape="box",  color="#DDDDDD"];
+    n97 [label="Javascript для того чтобы Jira дергал наш сервер по ediT" , shape="box",  color="#DDDDDD"];
+    n59 [label="FEATURE IssueStats логировать ошибки проектов и отображать их в статистике" , shape="box",  color="#DDDDDD"];
+    n28 [label="Backup базы и виртуалки" , shape="box",  color="#AAFFFF"];
+    n8 [label="BUG BITEAM_SDIM в части MANUAL" , shape="box",  color="#DDDDDD"];
+    n45 [label="Статус на групповых задачах - формировать автоматом" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n24 [label="Создать рабочие и статусные отчеты по обращениям" , shape="box",  color="#DDDDDD"];
+    n42 [label="Создание проектов в Jira для регламентных работ" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n41 [label="Создание проекта BI_TEMPLATE и его наполнение совместно с руководителями" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n23 [label="Разработать скрипт для автоматического формирования отчетности по КД" , shape="box",  color="#DDDDDD"];
+    n25 [label="Процедура для автоматического обновления категорий регламентной отчетности" , shape="box",  color="#DDDDDD"];
+    n22 [label="Отчёт по регламентным работам - детали" , shape="box",  color="#AAFFFF"];
+    n17 [label="Настроить агрегацию статуса, затраченной и оставшейся трудоемкости по включенным задачам" , shape="box",  color="#AAFFFF"];
+    n16 [label="Настроить drillthrough между страницами в отчете" , shape="box",  color="#AAFFFF"];
+    n21 [label="Загрузка необходимых данных для построения отчетов по SLA" , shape="box",  color="#AAFFFF"];
+    n18 [label="Доработка графика списания ворклога и оценки оставшегося времени для основного отчета" , shape="box",  color="#AAFFFF"];
+    n19 [label="Добавить в основной отчет аналог слайда SLA - % выполнения" , shape="box",  color="#DDDDDD"];
+    n15 [label="Генерация задач и worklog для проектов в статусной модели" , shape="box",  color="#AAFFFF"];
+    n47 [label="Автосинхронизация аттрибутов групповых и листовых подзадач" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n43 [label="Автопрогнозирование сроков задач" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n44 [label="Автоперевод статуса Ожидание пререквизитов -> В очереди" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n48 [label="Автоматическое создание при указании статуса" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+    n46 [label="Автоматическое создание задач по шаблону" , shape="box",  color="#EEEEEE" fontcolor="#CCCCCC"];
+
+    // task children
+    n5 -> n26 -> n39 -> n49 -> n73 -> n82 -> n98 -> n105 [dir=none color="#000000"];
+n113 -> n114 -> n115 -> n116 [dir=none color="#000000"];
+n74 -> n75 -> n76 -> n77 -> n78 -> n79 -> n80 -> n81 [dir=none color="#000000"];
+n50 -> n51 -> n52 -> n53 -> n54 -> n55 -> n56 -> n57 -> n58 -> n59 -> n60 -> n61 -> n62 -> n63 -> n64 -> n65 -> n66 -> n67 -> n68 -> n69 -> n70 -> n71 -> n72 [dir=none color="#000000"];
+n99 -> n100 -> n101 -> n102 -> n103 -> n104 [dir=none color="#000000"];
+n6 -> n7 -> n8 -> n9 -> n10 -> n11 -> n12 -> n13 -> n14 -> n20 [dir=none color="#000000"];
+n83 -> n84 -> n85 -> n86 -> n87 -> n88 -> n89 -> n90 -> n91 -> n92 -> n93 -> n94 -> n95 -> n96 -> n97 [dir=none color="#000000"];
+n106 -> n107 -> n108 -> n109 -> n110 -> n111 [dir=none color="#000000"];
+n27 -> n28 -> n29 -> n30 -> n31 -> n32 -> n33 -> n34 -> n35 -> n36 -> n37 -> n38 [dir=none color="#000000"];
+n21 -> n22 -> n23 -> n24 -> n25 [dir=none color="#000000"];
+n15 -> n16 -> n17 -> n18 -> n19 [dir=none color="#000000"];
+n41 -> n42 -> n43 -> n44 -> n45 -> n46 -> n47 -> n48 [dir=none color="#DDDDDD"];
+
+    
+    // ranks 
+    {
+    rank = same;
+    n1;n2;n3;n4;n112;
+    rankdir = LR;    
+    }    
+    
+    {
+    rank = same;
+    n5;n26;n39;n49;n73;n82;n98;n105;n113;n114;n115;n116;
+    rankdir = LR;    
+    }    
+    
+    {
+    rank = same;
+    n6;n7;n8;n9;n10;n11;n12;n13;n14;n20;n27;n28;n29;n30;n31;n32;n33;n34;n35;n36;n37;n38;n40;n50;n51;n52;n53;n54;n55;n56;n57;n58;n59;n60;n61;n62;n63;n64;n65;n66;n67;n68;n69;n70;n71;n72;n74;n75;n76;n77;n78;n79;n80;n81;n83;n84;n85;n86;n87;n88;n89;n90;n91;n92;n93;n94;n95;n96;n97;n99;n100;n101;n102;n103;n104;n106;n107;n108;n109;n110;n111;
+    rankdir = LR;    
+    }    
+    
+    {
+    rank = same;
+    n15;n16;n17;n18;n19;n21;n22;n23;n24;n25;n41;n42;n43;n44;n45;n46;n47;n48;
+    rankdir = LR;    
+    }
+}
+
+
+    
+    

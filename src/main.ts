@@ -82,6 +82,7 @@ export interface ProcessTasksFileOpts {
     targetPath: string;
     showInvisible?: boolean;
     grayInactive?: boolean;
+    bulkFrontArrow?: boolean;
 }
 
 export function fixTaskName(name: string): string {
@@ -90,7 +91,7 @@ export function fixTaskName(name: string): string {
 
 export function parseTasksFile(opts0: Partial<ProcessTasksFileOpts>) {
     const opts = { ...defaultProcessTasksFileOpts, ...opts0 };
-    const { sourcePath, targetPath, showInvisible } = opts;
+    const { sourcePath, targetPath, showInvisible, bulkFrontArrow } = opts;
     let taskFileContent = readFileSync(sourcePath, "utf-8");
 
     taskFileContent = taskFileContent.split("\t").join("    ");
@@ -258,7 +259,7 @@ export function parseTasksFile(opts0: Partial<ProcessTasksFileOpts>) {
     for (let [, task] of taskMaps) {
         // task.name = taskStr(task);
         tasks.push(task);
-        if (task.parent) rels.push({ s: task, t: task.parent, rt:"child", prime: task.parent.children[task.parent.children.length-1] === task});
+        if (task.parent) rels.push({ s: task, t: task.parent, rt:"child", prime: bulkFrontArrow && task.parent.children[0] === task || task.parent.children[task.parent.children.length-1] === task});
         for (let rq of task.req) rels.push({ s: rq, t: task, rt:"req", prime: true });
     }
 
@@ -300,6 +301,7 @@ const parsed = program
     .option("-t, --template <string>", "Name of template file")
     .option("--showInvisible", "Shows invisible links")
     .option("--grayInactive", "Grays out inactive branches")
+    .option("--bulkFrontArrow", "Also draw the first arrow of tasks bulks, not only the last one")
     .parse(process.argv);
 
 const o = program.opts();
@@ -312,6 +314,7 @@ opts.targetPath = o.output;
 opts.templatePath = o.template;
 opts.showInvisible = o.showInvisible;
 opts.grayInactive = o.grayInactive;
+opts.bulkFrontArrow = o.bulkFrontArrow;
 removeUndefined(opts);
 
 //opts.showInvisible = true;

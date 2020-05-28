@@ -1,1 +1,77 @@
-[]
+[
+ {
+  "cpl": 193,
+  "filePath": "src\\Ystd\\execOnce.ts",
+  "pos": 969
+ },
+ {
+  "cpl": 278,
+  "filePath": "src\\Ystd\\globalHandler.ts",
+  "pos": 296
+ },
+ {
+  "cpl": 131,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 3896
+ },
+ {
+  "cpl": 478,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 5588
+ },
+ {
+  "cpl": 479,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 13175
+ },
+ {
+  "cpl": 153,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 13716
+ },
+ {
+  "cpl": 155,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 20954
+ },
+ {
+  "cpl": 171,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 21134
+ },
+ {
+  "cpl": 172,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 21878
+ },
+ {
+  "cpl": 173,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 23371
+ },
+ {
+  "cpl": 157,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 24570
+ },
+ {
+  "cpl": 158,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 28194
+ },
+ {
+  "cpl": 159,
+  "filePath": "src\\Ystd\\lexer.ts",
+  "pos": 32819
+ },
+ {
+  "cpl": 287,
+  "filePath": "src\\Ystd\\projectDir.ts",
+  "pos": 566
+ },
+ {
+  "cpl": 472,
+  "filePath": "src\\Ystd\\tokenWriter.ts",
+  "pos": 4524
+ }
+]
