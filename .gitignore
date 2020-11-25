@@ -1,5 +1,4 @@
 node_modules
-ts_out
 .idea
 .vscode
 /VS.lnk
@@ -115,3 +114,4 @@ dist
 .tern-port
 
 /tasks.svg
+/ts_out
