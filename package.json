@@ -117,7 +117,7 @@
         "cross-env": "^6.0.3",
         "cytoscape": "^3.15.0",
         "dagre": "^0.8.5",
-        "debug": "^4.1.1",
+        "debug": "^4.3.1",
         "deepmerge": "^4.2.2",
         "dependency-cruiser": "^5.5.0",
         "expect": "^24.9.0",
